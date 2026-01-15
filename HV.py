@@ -11,7 +11,7 @@ st.set_page_config(
 
 # --- BARRA LATERAL (NAVEGACIÓN) ---
 with st.sidebar:
-    st.image("https://cdn-icons-png.flaticon.com/512/3135/3135715.png", width=100) # Puedes poner tu foto real aquí
+    st.image("Miguel.jpg", width=100) 
     st.title("Luis Miguel Guerrero")
     st.subheader("Ingeniero Topográfico")
     st.write("📍 Bogotá, Colombia")
