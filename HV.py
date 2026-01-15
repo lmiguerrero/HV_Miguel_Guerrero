@@ -1,64 +1,68 @@
-import streamlit as st
-from streamlit_folium import st_folium
-import folium
+importar streamlit como st
+desde streamlit_folium importar st_folium
+importar folio
 
 # CONFIGURACIÓN DE LA PÁGINA
 st.set_page_config(
-    page_title="Portafolio - Luis Miguel Guerrero",
-    page_icon="🗺️",
-    layout="wide"
+ tipulo_página="Portafolio - Luis Miguel Guerrero",
+ página_icono="🗺️",
+ diseño="ancho"
 )
 
 # --- BARRA LATERAL (NAVEGACIÓN) ---
-with st.sidebar:
-    st.image("Miguel.jpg", width=100) 
-    st.title("Luis Miguel Guerrero")
-    st.subheader("Ingeniero Topográfico")
-    st.write("📍 Bogotá, Colombia")
+con st.sidebar:
+ st.imagen(„Miguel.jpg", ancho=100) 
+ st.tipulo(„Luis Miguel Guerrero")
+ st.subencabezado("Ingeniero Topográfico")
+ st.escribir("📍 Bogotá, Colombia")
     
-    st.markdown("---")
-    opcion = st.radio("Navegar a:", ["Hoja de Vida", "Visor Geográfico", "Mis Programas"])
+ st.markdown("---")
+ opcion = st.radio("Navegar a:", ["Hoja de Vida", „Visor Geográfico", „Mis Programas"])
     
-    st.markdown("---")
-    st.caption("Contacto:")
-    st.caption("📧 lmiguelguerrero@outlook.com")
+ st.markdown("---")
+ st.subtítulo("Contacto:")
+ st.subtítulo("📧 lmiguelguerrero@outlook.com")
     # Nota: Evita poner tu cédula o teléfono personal en la versión pública web por seguridad.
 
 # --- SECCIÓN 1: HOJA DE VIDA ---
-if opcion == "Hoja de Vida":
-    st.title("Perfil Profesional")
-    st.markdown("""
-    **Ingeniero Topográfico** con más de diez años de experiencia en SIG, cartografía y análisis territorial. 
-    Especialista en levantamientos georreferenciados, delimitación de comunidades étnicas y áreas protegidas.
-    Experto en automatización de procesos con **Python** y bases de datos espaciales.
-    """)
+si operación == "Hoja de Vida":
+ st.tipulo("Perfil Profesional")
+ st.markdown("""
+ **Ingeniero Topográfico** con amplia experiencia en Sistemas de Información Geográfica (SIG), fotografía y análisis
+territorial. Especializado en levantamientos georreferenciados, reconstrucción de territorios y desarrollo de ella‐
+ramientas tecnológicas para optimización catastrófica. Amplia trayectoria en control de calidad de levantamientos
+topográficos, seguimiento precisión y complemento normativo. Experiencia en la delimitación y análisis territorial
+de comunidades étnicas y áreas protegidas, integrando metodologías participativas y enfoques socioambientales.
+Habilidades en automatización de procesos con Python y bases de datos espaciales, optimizando la gestión de
+información geoespacial.
+ """)
     
     # Botón de descarga del PDF
-    col_dl, col_blank = st.columns([1, 4])
-    with col_dl:
-        try:
-            with open("HV_MiguelGuerrero.pdf", "rb") as pdf_file:
-                st.download_button(
-                    label="📄 Descargar CV (PDF)",
-                    data=pdf_file,
-                    file_name="HV_MiguelGuerrero.pdf",
-                    mime="application/pdf"
+ col_dl, col_blank = st.columnas([1, 4])
+ con col_dl:
+ intentar:
+            con abierto(„HV_MiguelGuerrero.pdf", "rb") como archivo_pdf:
+ st.descargar_botón(
+ etiqueta="📄 Descargar CV (PDF)",
+ data=pdf_file,
+ nombre_archivo=„HV_MiguelGuerrero.pdf",
+ mime="aplicación/pdf"
                 )
-        except FileNotFoundError:
-            st.warning("⚠️ Nota: Sube tu archivo 'hoja_vida.pdf' a la carpeta para activar este botón.")
+ excepto Error de archivo no encontrado:
+ st.advertencia("⚠️ Nota: Sube tu archivo 'hoja_vida.pdf' a la alfombra para activar este botón.")
 
-    st.markdown("---")
+ st.markdown("---")
 
     # Experiencia
-    st.subheader("💼 Experiencia Profesional")
+ st.subencabezado("💼 Experiencia Profesional")
     
-    with st.container():
-        c1, c2 = st.columns([3, 1])
-        c1.markdown("**Unidad de Restitución de Tierras** | *Profesional Topografía y SIG*")
-        c2.markdown("📅 *2015-2017 | 2023-2025*")
-        st.write("""
-        * Análisis territorial de comunidades étnicas y delimitación de áreas protegidas.
-        * Desarrollo de geovisor en Python para la Dirección de Asuntos Étnicos.
+ con st.contenedor():
+ c1, c2=st.columnas([3, 1])
+ c1.markdown("**Unidad de Restitución de Tierras** | *Topografía Profesional y SIG*")
+ c2.markdown("📅 *2015-2017 | 2023-2025*")
+ st.escribir("""
+ * Análisis territorial de comunidades étnicas y delimitación de áreas protegidas.
+ * Desarrollo de geovisor en Python para la Dirección de Asuntos Étnicos.
         * Análisis en medidas cautelares (Pueblo Barí, Chiribiquete, Llanos del Yarí).
         """)
     
