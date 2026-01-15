@@ -33,7 +33,7 @@ if opcion == "Hoja de Vida":
     Experto en automatización de procesos con **Python** y bases de datos espaciales.
     """)
     
-    # Botón de descarga del PDF (Debes tener el archivo 'hoja_vida.pdf' en la misma carpeta)
+    # Botón de descarga del PDF
     col_dl, col_blank = st.columns([1, 4])
     with col_dl:
         try:
@@ -41,7 +41,7 @@ if opcion == "Hoja de Vida":
                 st.download_button(
                     label="📄 Descargar CV (PDF)",
                     data=pdf_file,
-                    file_name="Luis_Miguel_Guerrero_CV.pdf",
+                    file_name="HV_MiguelGuerrero.pdf",
                     mime="application/pdf"
                 )
         except FileNotFoundError:
@@ -122,7 +122,7 @@ elif opcion == "Visor Geográfico":
     # Renderizar mapa
     st_folium(m, width=1200, height=500)
     
-    st.info("💡 En una versión avanzada, aquí cargaremos tus archivos GeoJSON/KML reales de los polígonos.")
+    st.info("💡 En una versión avanzada, aquí subiré GeoJSON/KML reales de los polígonos.")
 
 # --- SECCIÓN 3: MIS PROGRAMAS ---
 elif opcion == "Mis Programas":
