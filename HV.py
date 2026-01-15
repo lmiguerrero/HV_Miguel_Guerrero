@@ -37,7 +37,7 @@ if opcion == "Hoja de Vida":
     col_dl, col_blank = st.columns([1, 4])
     with col_dl:
         try:
-            with open("hoja_vida.pdf", "rb") as pdf_file:
+            with open("HV_MiguelGuerrero.pdf", "rb") as pdf_file:
                 st.download_button(
                     label="📄 Descargar CV (PDF)",
                     data=pdf_file,
